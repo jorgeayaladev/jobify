@@ -1,0 +1,13 @@
+docker compose run --rm backend django-admin startproject core .
+docker compose up --build
+docker compose run --rm backend python manage.py migrate
+docker compose run --rm backend python manage.py startapp [nombre]
+docker compose run --rm backend python manage.py createsuperuser
+
+docker ps
+docker exec -it jobify-db-1 psql -U postgres -d jobify
+\dt
+\q
+
+docker compose down -v
+docker compose up --build

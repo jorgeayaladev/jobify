@@ -1,0 +1,50 @@
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+bin/
+include/
+lib/
+lib64/
+local/
+pip-selfcheck.json
+pyvenv.cfg
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.Python
+# ipython checkpoints
+ipynb_checkpoints
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+
+# Operating system files
+*~   # temporary files
+.directory
+.Trash-*
+.nfs*
+
+# Docker files themselves
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git
+.git
+.gitignore
+
+# Project-specific temporary files/logs
+*.log
+*.sqlite3
+.localdata/
+/logs/
+/media/ # If you are using a volume for media in production
+/static/ # If you are using a volume or CDN for static files in production
