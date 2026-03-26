@@ -1,0 +1,556 @@
+/* Variables CSS */
+:root {
+  --primary: #ff6b35;
+  --primary-dark: #e55a2b;
+  --primary-rgb: 255, 107, 53;
+  --secondary: #2a9d8f;
+  --dark: #1a2e3f;
+  --dark-rgb: 26, 46, 63;
+  --light: #f5f7fa;
+  --gray: #6c757d;
+  --gray-light: #e9ecef;
+  --border: #dee2e6;
+  --success: #28a745;
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+/* Contenedor principal full screen */
+.login-fullscreen {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Lado izquierdo - Contenido de marca */
+.brand-side {
+  flex: 1.2;
+  background-color: var(--dark);
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 107, 53, 0.15) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(42, 157, 143, 0.1) 0%,
+      transparent 35%
+    );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Elementos decorativos del lado izquierdo */
+.brand-side::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.brand-side::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.2) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.brand-header {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.brand-logo .logo-icon {
+  width: 2.5rem;
+  fill: var(--primary-color);
+  filter: drop-shadow(0 4px 8px rgba(255, 107, 53, 0.3));
+}
+
+.brand-logo span {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-logo span span {
+  color: var(--primary);
+}
+
+.brand-quote {
+  max-width: 500px;
+}
+
+.brand-quote h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.brand-quote p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.brand-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brand-footer {
+  position: relative;
+  z-index: 2;
+  opacity: 0.6;
+  display: flex;
+  gap: 2rem;
+}
+.brand-footer a {
+  color: white;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.brand-footer a:hover {
+  color: var(--primary);
+  opacity: 1;
+}
+.brand-footer-icon {
+  width: 1.25rem;
+}
+
+/* Lado derecho - Formulario de login */
+.login-side {
+  flex: 0.8;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.login-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+.login-header p i {
+  color: var(--primary);
+  margin-right: 0.3rem;
+}
+
+/* Formulario */
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+.form-label svg {
+  width: 1.25rem;
+  color: var(--primary);
+  fill: transparent;
+  margin-right: 0.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-group svg {
+  position: absolute;
+  left: 1rem;
+  width: 1.25rem;
+  color: var(--gray);
+  transition: var(--transition);
+  z-index: 1;
+}
+.input-group input {
+  color: var(--dark);
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.8rem;
+  border: 2px solid var(--gray-light);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--light);
+  outline: none;
+}
+.input-group input:focus {
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+}
+.input-group input:focus + svg {
+  color: var(--primary);
+}
+.input-group input::placeholder {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.form-group span {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 0;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: transparent;
+  border: none;
+  z-index: 1;
+}
+
+.password-toggle:hover {
+  color: var(--primary);
+}
+
+/* Opciones del formulario */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.forgot-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Botón de acceso */
+.btn-login {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.4);
+}
+
+.btn-login i {
+  font-size: 1rem;
+}
+
+/* Mensaje de acceso restringido */
+.restricted-message {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background-color: #fff5f0;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+  margin: 1.5rem 0;
+}
+
+.restricted-message i {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.restricted-message p {
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+.restricted-message strong {
+  color: var(--primary);
+}
+
+/* Soporte */
+.support-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.support-link a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.support-link a:hover {
+  color: var(--primary);
+}
+
+.support-link i {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .brand-quote h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .brand-side {
+    padding: 2.5rem;
+  }
+
+  .brand-stats {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-fullscreen {
+    flex-direction: column;
+  }
+
+  .brand-side {
+    flex: none;
+    padding: 2rem;
+    min-height: 300px;
+  }
+
+  .brand-quote h1 {
+    font-size: 2.2rem;
+  }
+
+  .brand-stats {
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .brand-footer {
+    margin-top: 2rem;
+  }
+
+  .login-side {
+    flex: none;
+    padding: 2rem 1.5rem;
+  }
+
+  .login-container {
+    max-width: 100%;
+  }
+
+  .login-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-side {
+    padding: 1.5rem;
+    min-height: 250px;
+  }
+
+  .brand-logo span {
+    font-size: 1.5rem;
+  }
+
+  .brand-quote h1 {
+    font-size: 1.8rem;
+  }
+
+  .brand-quote p {
+    font-size: 0.95rem;
+  }
+
+  .brand-stats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
+  .brand-footer {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.brand-side {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.login-side {
+  animation: fadeInRight 0.8s ease-out;
+}

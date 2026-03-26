@@ -33,7 +33,11 @@ services:
     build: ./backend
     container_name: django_backend
     command: >
-      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      sh -c "
+      python wait_for_db.py &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:8000
+      "
     volumes:
       - ./backend:/app
     ports:
@@ -46,13 +50,20 @@ services:
   frontend:
     build: ./frontend
     container_name: next_frontend
-    command: pnpm dev
+    command: >
+      sh -c "
+      pnpm install &&
+      pnpm dev
+      "
     ports:
       - "3000:3000"
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
+    environment:
+      - CI=true
 
 volumes:
   postgres_data:

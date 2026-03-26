@@ -11,3 +11,7 @@ docker exec -it jobify-db-1 psql -U postgres -d jobify
 
 docker compose down -v
 docker compose up --build
+
+docker compose down -v
+docker compose build --no-cache
+docker compose up

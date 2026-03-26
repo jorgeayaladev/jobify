@@ -1,5 +1,5 @@
 # Imagen base
-FROM node:24-bookworm
+FROM node:20
 
 # Instalar pnpm
 RUN npm install -g pnpm
