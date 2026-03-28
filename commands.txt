@@ -18,3 +18,8 @@ docker compose up
 
 docker compose down -v
 docker system prune -a --volumes
+
+languages
+conferences
+volunteering
+projects
