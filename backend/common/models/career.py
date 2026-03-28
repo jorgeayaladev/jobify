@@ -1,7 +1,7 @@
+from core.models import BaseModel
 from django.db import models
 from django.utils.text import slugify
 
-from backend.core.models import BaseModel
 from .category import Category
 
 

@@ -1,6 +1,5 @@
+from core.models import BaseModel
 from django.db import models
-
-from backend.core.models import BaseModel
 
 
 class JobSkill(BaseModel):
